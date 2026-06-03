@@ -276,6 +276,13 @@ export default function Inventory() {
                       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0, cursor: 'pointer'}}
                     />
                   </div>
+                  <input 
+                    type="text" 
+                    placeholder="Atau URL Gambar" 
+                    style={{...inputStyle, padding: '0.5rem', fontSize: '0.75rem'}}
+                    value={newItem.image}
+                    onChange={e => setNewItem({...newItem, image: e.target.value, imagePreview: e.target.value})}
+                  />
                 </div>
 
                 {/* Right Column: Details */}
@@ -391,6 +398,13 @@ export default function Inventory() {
                       style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', opacity: 0, cursor: 'pointer'}}
                     />
                   </div>
+                  <input 
+                    type="text" 
+                    placeholder="Atau URL Gambar" 
+                    style={{...inputStyle, padding: '0.5rem', fontSize: '0.75rem'}}
+                    value={editingItem.image}
+                    onChange={e => setEditingItem({...editingItem, image: e.target.value, imagePreview: e.target.value})}
+                  />
                 </div>
 
                 {/* Right Column: Details */}
