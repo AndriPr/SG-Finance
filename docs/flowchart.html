@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowchart POS - SG-Finance</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 2rem; background-color: #f9fafb; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); width: 100%; max-width: 800px; text-align: center; }
+        h1 { color: #1f2937; margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Flowchart Transaksi Kasir (POS)</h1>
+        <pre class="mermaid">
+flowchart TD
+    Start([Mulai Transaksi]) --> SelectItem[Pilih Produk di Keranjang]
+    SelectItem --> CheckStock{Stok Cukup?}
+    CheckStock -- Tidak --> Error[Tolak & Tampilkan Pesan Error]
+    CheckStock -- Ya --> AddCart[Tambahkan ke Keranjang]
+    
+    AddCart --> MoreItems{Tambah Produk Lain?}
+    MoreItems -- Ya --> SelectItem
+    MoreItems -- Tidak --> Checkout[Klik Tombol Bayar]
+    
+    Checkout --> Calculate[Hitung Subtotal, PPN 11%, dan Total]
+    Calculate --> DeductStock[Otomatis Kurangi Stok Inventaris]
+    
+    DeductStock --> StockAlert{Sisa Stok <= 5?}
+    StockAlert -- Ya --> SendNotif[Kirim Notifikasi Stok Menipis]
+    StockAlert -- Tidak --> RecordSale
+    
+    SendNotif --> RecordSale
+    RecordSale --> RecordJournal[Otomatis Catat Pendapatan di Buku Besar]
+    RecordJournal --> RecordTax[Otomatis Catat Hutang PPN di Buku Besar]
+    RecordTax --> ClearCart[Kosongkan Keranjang Kasir]
+    ClearCart --> ShowSuccess[Tampilkan Struk/Pop-up Sukses]
+    ShowSuccess --> End([Selesai])
+        </pre>
+    </div>
+</body>
+</html>

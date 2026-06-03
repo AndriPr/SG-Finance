@@ -5,11 +5,11 @@ const AppContext = createContext();
 export function AppProvider({ children }) {
   // Initial Mock Data
   const [inventory, setInventory] = useState([
-    { id: 'INV-001', name: 'Matcha Latte', category: 'Minuman', stock: 42, price: 35000, hpp: 12000, image: 'https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?auto=format&fit=crop&q=80&w=150&h=150' },
-    { id: 'INV-002', name: 'Cappuccino', category: 'Minuman', stock: 32, price: 30000, hpp: 10000, image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=150&h=150' },
-    { id: 'INV-003', name: 'Strawberry Smoothies', category: 'Minuman', stock: 25, price: 38000, hpp: 15000, image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&q=80&w=150&h=150' },
-    { id: 'INV-004', name: 'Artisan Chronograph', category: 'Elektronik / Aksesoris', stock: 142, price: 4485000, hpp: 2000000, image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=150&h=150' },
-    { id: 'INV-005', name: 'Turbo Runner X', category: 'Alas Kaki / Olahraga', stock: 3, price: 1800000, hpp: 800000, image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=150&h=150' },
+    { id: 'INV-001', name: 'Wedang Uwuh', category: 'Minuman Tradisional', stock: 50, price: 38000, hpp: 15000, image: 'https://via.placeholder.com/150?text=Wedang+Uwuh' },
+    { id: 'INV-002', name: 'Jahe Merah', category: 'Minuman Tradisional', stock: 50, price: 28000, hpp: 10000, image: 'https://via.placeholder.com/150?text=Jahe+Merah' },
+    { id: 'INV-003', name: 'Beras Kencur', category: 'Minuman Tradisional', stock: 50, price: 28000, hpp: 10000, image: 'https://via.placeholder.com/150?text=Beras+Kencur' },
+    { id: 'INV-004', name: 'Kunyit Asam', category: 'Minuman Tradisional', stock: 50, price: 28000, hpp: 10000, image: 'https://via.placeholder.com/150?text=Kunyit+Asam' },
+    { id: 'INV-005', name: 'Temulawak', category: 'Minuman Tradisional', stock: 50, price: 28000, hpp: 10000, image: 'https://via.placeholder.com/150?text=Temulawak' },
   ]);
 
   const [journal, setJournal] = useState([
